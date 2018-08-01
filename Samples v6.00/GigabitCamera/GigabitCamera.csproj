@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B159272-F0CC-4E24-9D57-73C690DA19B2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GigabitCamera</RootNamespace>
+    <AssemblyName>GigabitCamera</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\win32\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\win32\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Flir.Atlas.Image">
+      <HintPath>$(FLIR_Atlas5)bin\$(Platform)\Flir.Atlas.Image.dll</HintPath>
+    </Reference>
+    <Reference Include="Flir.Atlas.Live">
+      <HintPath>$(FLIR_Atlas5)bin\$(Platform)\Flir.Atlas.Live.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DiscoveryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiscoveryDialog.Designer.cs">
+      <DependentUpon>DiscoveryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalIoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExternalIoForm.Designer.cs">
+      <DependentUpon>ExternalIoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FocusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FocusControl.Designer.cs">
+      <DependentUpon>FocusControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenICamParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenICamParameters.Designer.cs">
+      <DependentUpon>GenICamParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoggerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoggerWindow.Designer.cs">
+      <DependentUpon>LoggerWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlaybackDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlaybackDialog.Designer.cs">
+      <DependentUpon>PlaybackDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecordingForm.Designer.cs">
+      <DependentUpon>RecordingForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DiscoveryDialog.resx">
+      <DependentUpon>DiscoveryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalIoForm.resx">
+      <DependentUpon>ExternalIoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FocusControl.resx">
+      <DependentUpon>FocusControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenICamParameters.resx">
+      <DependentUpon>GenICamParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoggerWindow.resx">
+      <DependentUpon>LoggerWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlaybackDialog.resx">
+      <DependentUpon>PlaybackDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RecordingForm.resx">
+      <DependentUpon>RecordingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="FLIR.Atlas.x64.bat" />
+    <None Include="FLIR.Atlas.x86.bat" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild">
+    <Exec Command="call &quot;$(ProjectDir)\FLIR.Atlas.x86.bat&quot; &quot;$(TargetDir)&quot;"
+          Condition="$(Platform) == x86"/>
+    <Exec Command="call &quot;$(ProjectDir)\FLIR.Atlas.x64.bat&quot; &quot;$(TargetDir)&quot;"
+          Condition="$(Platform) == x64"/>
+  </Target>
+</Project>
